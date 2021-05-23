@@ -36,7 +36,7 @@ function M.kitty(config)
   color7 ${fg_dark}
   
   # bright
-  color8 ${bg2}
+  color8 ${fg_gutter}
   color9 ${red}
   color10 ${green}
   color11 ${yellow}
