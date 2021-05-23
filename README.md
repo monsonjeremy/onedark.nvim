@@ -2,7 +2,9 @@
 
 A dark Neovim theme written in Lua. Includes extra themes for Kitty and Alacritty
 
-![image](https://user-images.githubusercontent.com/292349/115295095-3a9e5080-a10e-11eb-9aed-6054488c46ce.png)
+<img width="1680" alt="Screen Shot 2021-05-23 at 3 48 41 PM" src="https://user-images.githubusercontent.com/8846086/119279210-16d39c00-bbdf-11eb-8604-b7258c8ff72e.png">
+
+<img width="1680" alt="Screen Shot 2021-05-23 at 2 51 04 PM" src="https://user-images.githubusercontent.com/8846086/119279233-32d73d80-bbdf-11eb-8bad-34c92cb48ab2.png">
 
 ## ✨ Features
 
@@ -137,4 +139,4 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 
 Extra color configs for **Kitty**, and **Alacritty** can be found in [extras](extras/). To use them, refer to their respective documentation.
 
-![image](https://user-images.githubusercontent.com/292349/115395546-d8d6f880-a198-11eb-98fb-a1194787701d.png)
+<img width="825" alt="Screen Shot 2021-05-23 at 2 49 57 PM" src="https://user-images.githubusercontent.com/8846086/119279221-23f08b00-bbdf-11eb-885e-c2c238aa1c04.png">
