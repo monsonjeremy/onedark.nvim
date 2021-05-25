@@ -90,7 +90,7 @@ let g:lightline = {'colorscheme': 'onedark'}
 > ❗️ configuration needs to be set **BEFORE** loading the color scheme with `colorscheme onedark`
 
 | Option                           | Default | Description                                                                                                                                                     |
-| -------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                       |
+| -------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onedark_italic_comments          | `true`  | Make comments italic                                                                                                                                            |
 | onedark_italic_keywords          | `true`  | Make keywords italic                                                                                                                                            |
 | onedark_italic_functions         | `false` | Make functions italic                                                                                                                                           |
