@@ -12,7 +12,7 @@ A dark Neovim theme written in Lua. Includes extra themes for Kitty and Alacritt
 - minimal inactive statusline (currently bugged)
 - vim terminal colors
 - darker background for sidebar-like windows
-- color configs for [Kitty](https://sw.kovidgoyal.net/kitty/conf.html?highlight=include) and [Alacritty](https://github.com/alacritty/alacritty) 
+- color configs for [Kitty](https://sw.kovidgoyal.net/kitty/conf.html?highlight=include) and [Alacritty](https://github.com/alacritty/alacritty)
 - **lualine** theme
 
 ### Plugin Support
@@ -90,8 +90,7 @@ let g:lightline = {'colorscheme': 'onedark'}
 > ❗️ configuration needs to be set **BEFORE** loading the color scheme with `colorscheme onedark`
 
 | Option                           | Default | Description                                                                                                                                                     |
-| -------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onedark_terminal_colors          | `true`  | Configure the colors used when opening a `:terminal` in Neovim                                                                                                  |
+| -------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                       |
 | onedark_italic_comments          | `true`  | Make comments italic                                                                                                                                            |
 | onedark_italic_keywords          | `true`  | Make keywords italic                                                                                                                                            |
 | onedark_italic_functions         | `false` | Make functions italic                                                                                                                                           |
