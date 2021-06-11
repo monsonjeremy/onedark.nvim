@@ -32,7 +32,7 @@ function M.setup(config)
     -- TermCursor  = { }, -- cursor in a focused terminal
     -- TermCursorNC= { }, -- cursor in an unfocused terminal
     ErrorMsg = {fg = c.error}, -- error messages on the command line
-    VertSplit = {fg = c.border}, -- the column separating vertically split windows
+    VertSplit = {fg = c.bg2}, -- the column separating vertically split windows
     Folded = {fg = c.blue, bg = c.fg_gutter}, -- line used for closed folds
     FoldColumn = {bg = c.bg, fg = c.fg_gutter}, -- 'foldcolumn'
     SignColumn = {bg = config.transparent and c.none or c.bg, fg = c.fg_gutter}, -- column where |signs| are displayed
@@ -273,6 +273,7 @@ function M.setup(config)
     TelescopeBorder = {fg = c.border_highlight},
     -- NvimTree
     NvimTreeNormal = {fg = c.fg_light, bg = c.bg_sidebar},
+    NvimTreeEndOfBuffer = {fg = c.bg2},
     NvimTreeRootFolder = {fg = c.fg_light, style = "bold"},
     NvimTreeGitDirty = {fg = c.yellow2},
     NvimTreeGitNew = {fg = c.git.add},
