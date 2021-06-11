@@ -2,7 +2,7 @@
 local config
 
 -- shim vim for kitty and other generators
-vim = vim or { g = {}, o = {} }
+vim = vim or {g = {}, o = {}}
 
 local function opt(key, default)
   key = "onedark_" .. key
@@ -27,7 +27,7 @@ config = {
   dev = opt("dev", false),
   darkFloat = opt("dark_float", true),
   darkSidebar = opt("dark_sidebar", true),
-  transform_colors = false,
+  transform_colors = false
 }
 
 return config
