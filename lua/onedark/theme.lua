@@ -28,7 +28,7 @@ function M.setup(config)
     DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
     DiffDelete = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
     DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer = { fg = c.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer = { fg = config.hideNonText and c.bg or c.fg_dark }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor  = { }, -- cursor in a focused terminal
     -- TermCursorNC= { }, -- cursor in an unfocused terminal
     ErrorMsg = { fg = c.error }, -- error messages on the command line

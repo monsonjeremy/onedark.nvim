@@ -97,6 +97,7 @@ let g:lightline = {'colorscheme': 'onedark'}
 | onedark_italic_variables         | `false` | Make variables and identifiers italic                                                                                                                           |
 | onedark_transparent              | `false` | Enable this to disable setting the background color                                                                                                             |
 | onedark_hide_inactive_statusline | `false` | Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**. |
+| onedark_hide_nontext             | `false` | Enabling this option, will hide filler lines (~) after the end of the buffer                                                                                    |
 | onedark_sidebars                 | `{}`    | Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`                                                      |
 | onedark_dark_sidebar             | `true`  | Sidebar like windows like `NvimTree` get a darker background                                                                                                    |
 | onedark_dark_float               | `true`  | Float windows like the lsp diagnostics windows get a darker background.                                                                                         |
