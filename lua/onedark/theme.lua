@@ -343,6 +343,14 @@ function M.setup(config)
     -- ALE
     ALEWarningSign = { fg = c.yellow },
     ALEErrorSign   = { fg = c.red },
+
+    -- Hop
+    HopNextKey = { fg = c.purple, style = "bold" },
+    HopNextKey1 = { fg = c.blue, style = "bold" },
+    HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
+    HopUnmatched = { fg = c.dark5 },
+
+    LightspeedGreyWash = { fg = c.dark5 },
   }
 
   if config.hideInactiveStatusline then
