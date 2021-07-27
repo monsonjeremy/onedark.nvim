@@ -15,7 +15,7 @@ function M.setup(config)
   theme.colors = colors.setup(config)
   local c = theme.colors
 
-  theme.base = {
+  theme.base = { -- luacheck: ignore
     Comment = {fg = c.fg_gutter, style = config.commentStyle}, -- any comment
     ColorColumn = {bg = c.bg_visual}, -- used for the columns set with 'colorcolumn'
     Conceal = {fg = c.fg_gutter}, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -33,7 +33,7 @@ function M.setup(config)
     -- TermCursor  = { }, -- cursor in a focused terminal
     -- TermCursorNC= { }, -- cursor in an unfocused terminal
     ErrorMsg = {fg = c.error}, -- error messages on the command line
-    VertSplit = {fg = c.border}, -- the column separating vertically split windows
+    VertSplit = {fg = c.bg_visual}, -- the column separating vertically split windows
     Folded = {fg = c.blue, bg = c.fg_gutter}, -- line used for closed folds
     FoldColumn = {bg = c.bg, fg = c.fg_gutter}, -- 'foldcolumn'
     SignColumn = {bg = config.transparent and c.none or c.bg, fg = c.fg_gutter}, -- column where |signs| are displayed
@@ -76,7 +76,6 @@ function M.setup(config)
     WarningMsg = {fg = c.warning}, -- warning messages
     Whitespace = {fg = c.fg_gutter}, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = {bg = c.bg_visual}, -- current match in 'wildmenu' completion
-
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
     -- commented out groups should chain up to their "preferred" group by
@@ -92,7 +91,6 @@ function M.setup(config)
 
     Identifier = {fg = c.red, style = config.variableStyle}, -- (preferred) any variable name
     Function = {fg = c.blue, style = config.functionStyle}, -- function name (also: methods for classes)
-
     Statement = {fg = c.purple}, -- (preferred) any statement
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
@@ -122,18 +120,14 @@ function M.setup(config)
     Underlined = {style = "underline"}, -- (preferred) text that stands out, HTML links
     Bold = {style = "bold"},
     Italic = {style = "italic"},
-
     -- ("Ignore", below, may be invisible...)
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error = {fg = c.error}, -- (preferred) any erroneous construct
     Todo = {bg = c.yellow, fg = c.bg}, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-
     qfLineNr = {fg = c.dark5},
     qfFileName = {fg = c.blue},
-
     htmlTag = {fg = c.purple, style = "bold"},
-
     -- mkdHeading = { fg = c.orange, style = "bold" },
     -- mkdCode = { bg = c.bg2, fg = c.fg },
     mkdCodeDelimiter = {bg = c.bg2, fg = c.fg},
@@ -147,17 +141,14 @@ function M.setup(config)
     markdownH1 = {fg = c.red, style = "bold"},
     markdownH2 = {fg = c.blue, style = "bold"},
     markdownLinkText = {fg = c.blue, style = "underline"},
-
     debugPC = {bg = c.bg_sidebar}, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = {bg = util.darken(c.info, 0.1), fg = c.info}, -- used for breakpoint colors in terminal-debug
-
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
     LspReferenceText = {bg = c.fg_gutter}, -- used for highlighting "text" references
     LspReferenceRead = {bg = c.fg_gutter}, -- used for highlighting "read" references
     LspReferenceWrite = {bg = c.fg_gutter}, -- used for highlighting "write" references
-
     LspDiagnosticsDefaultError = {fg = c.error}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning = {fg = c.warning}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultInformation = {fg = c.info}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -296,7 +287,8 @@ function M.setup(config)
 
     -- NvimTree
     NvimTreeNormal = {fg = c.fg_light, bg = c.bg_sidebar},
-    NvimTreeRootFolder = {fg = c.yellow, style = "bold"},
+    NvimTreeEndOfBuffer = config.darkSidebar and {fg = c.bg2} or {fg = c.bg},
+    NvimTreeRootFolder = {fg = c.fg_light, style = "bold"},
     NvimTreeGitDirty = {fg = c.yellow2},
     NvimTreeGitNew = {fg = c.git.add},
     NvimTreeGitDeleted = {fg = c.git.delete},
@@ -304,7 +296,8 @@ function M.setup(config)
     NvimTreeIndentMarker = {fg = c.fg_gutter},
     NvimTreeImageFile = {fg = c.fg_sidebar},
     NvimTreeSymlink = {fg = c.purple},
-    NvimTreeFolderName = {fg = c.blue},
+    NvimTreeFolderName = {fg = c.fg_light},
+    NvimTreeOpenedFolderName = {fg = c.fg_light, style = "bold"},
     LspDiagnosticsError = {fg = c.error},
     LspDiagnosticsWarning = {fg = c.warning},
     LspDiagnosticsInformation = {fg = c.info},
