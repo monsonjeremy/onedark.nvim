@@ -1,12 +1,13 @@
 local util = require("onedark.util")
 local colors = require("onedark.colors")
+local configModule = require("onedark.config")
 
 local M = {}
 
 ---@param config Config
 ---@return Theme
 function M.setup(config)
-  config = config or require("onedark.config")
+  config = config or configModule.config
 
   ---@class Theme
   local theme = {}
@@ -162,15 +163,15 @@ function M.setup(config)
     LspDiagnosticsDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-    LspDiagnosticsVirtualTextError = { bg = util.darken(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
-    LspDiagnosticsVirtualTextWarning = { bg = util.darken(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-    LspDiagnosticsVirtualTextInformation = { bg = util.darken(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
-    LspDiagnosticsVirtualTextHint = { bg = util.darken(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
+    LspDiagnosticsVirtualTextError = { bg = c.none, fg = c.diagnostics.error }, -- Used for "Error" diagnostic virtual text
+    LspDiagnosticsVirtualTextWarning = { bg = c.none, fg = c.diagnostics.warning }, -- Used for "Warning" diagnostic virtual text
+    LspDiagnosticsVirtualTextInformation = { bg = c.none, fg = c.diagnostics.info }, -- Used for "Information" diagnostic virtual text
+    LspDiagnosticsVirtualTextHint = { bg = c.none, fg = c.diagnostics.hint }, -- Used for "Hint" diagnostic virtual text
 
-    LspDiagnosticsUnderlineError = { style = "undercurl", sp = c.error }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = c.warning }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineError = { style = "undercurl", sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
 
     LspSignatureActiveParameter = { fg = c.orange },
 
@@ -353,7 +354,7 @@ function M.setup(config)
   }
 
   if config.hideInactiveStatusline then
-    local inactive = { style = "underline", bg = c.bg, fg = c.bg, sp = c.border }
+    local inactive = {style = "underline", bg = c.bg, fg = c.bg, sp = c.bg_visual}
 
     -- StatusLine
     theme.base.StatusLineNC = inactive

@@ -1,9 +1,10 @@
 local util = require("onedark.util")
+local configModule = require("onedark.config")
 
 local M = {}
 
 function M.alacritty(config)
-  config = config or require("onedark.config")
+  config = config or configModule.config
   config.transform_colors = true
   local colors = require("onedark.colors").setup(config)
 
@@ -48,7 +49,7 @@ colors:
   indexed_colors:
     - { index: 16, color: '${orange}' }
     - { index: 17, color: '${red1}' }
-    
+
   ]],
     alacrittyColors
   )
