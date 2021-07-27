@@ -10,14 +10,12 @@ function M.setup(config)
 
   -- Color Palette
   ---@class ColorScheme
-  local colors = {}
-
-  colors = {
+  local colors = {
     none = "NONE",
     bg = "#282c34",
-    bg2 = '#21252b',
-    bg_visual = '#393f4a',
-    border = '#646e82',
+    bg2 = "#21252b",
+    bg_visual = "#393f4a",
+    border = "#646e82",
     bg_highlight = "#242b38",
     fg = "#abb2bf",
     fg_light = "#adbac7",
@@ -30,13 +28,18 @@ function M.setup(config)
     orange = "#d19a66",
     yellow = "#e0af68",
     yellow2 = "#e2c08d",
-    bg_yellow = '#ebd09c',
+    bg_yellow = "#ebd09c",
     green = "#98c379",
     red = "#e86671",
     red1 = "#f65866",
-    git = { change = "#e0af68", add = "#109868", delete = "#9A353D", conflict = "#bb7a61" },
-    gitSigns = { change = "#e0af68", add = "#109868", delete = "#9A353D" },
-    diagnostics = { error = '#db4b4b', hint = "#1abc9c", info = "#0db9d7", warn = "#e0af68" }
+    git = {change = "#e0af68", add = "#109868", delete = "#9A353D", conflict = "#bb7a61"},
+    gitSigns = {change = "#e0af68", add = "#109868", delete = "#9A353D"},
+    diagnostics = {
+      error = "#db4b4b",
+      hint = "#1abc9c",
+      info = "#0db9d7",
+      warn = "#e0af68"
+    }
   }
 
   util.bg = colors.bg
@@ -45,13 +48,13 @@ function M.setup(config)
     add = util.darken(colors.git.add, 0.15),
     delete = util.darken(colors.git.delete, 0.15),
     change = util.darken(colors.git.change, 0.15),
-    text = colors.fg_gutter,
+    text = colors.fg_gutter
   }
 
   colors.gitSigns = {
     add = util.brighten(colors.gitSigns.add, 0.2),
     change = util.brighten(colors.gitSigns.change, 0.2),
-    delete = util.brighten(colors.gitSigns.delete, 0.2),
+    delete = util.brighten(colors.gitSigns.delete, 0.2)
   }
 
   colors.git.ignore = colors.fg_gutter
