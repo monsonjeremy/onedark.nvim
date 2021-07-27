@@ -8,6 +8,7 @@ local function setup(userConfig)
 
   -- Load colorscheme
   util.load(theme.setup(configModule.config))
+  vim.cmd [[colorscheme onedark]]
 end
 
 return {setup = setup}
