@@ -185,7 +185,6 @@ function M.setup(config)
     -- LspDiagnosticsSignHint              = { }, -- Used for "Hint" signs in sign column
   }
 
-
   theme.plugins = {
 
     -- These groups are for the neovim tree-sitter highlights.
@@ -204,7 +203,7 @@ function M.setup(config)
     TSDanger = { fg = c.bg, bg = c.error },
     TSConstructor = { fg = c.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
-    TSConstant          = { fg = c.yellow };    -- For constants
+    TSConstant = { fg = c.yellow }, -- For constants
     -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
@@ -214,12 +213,12 @@ function M.setup(config)
     -- TSFunction          = { };    -- For function (calls and definitions).
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude           = { fg = c.purple };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSInclude = { fg = c.purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword = { fg = c.purple, style = config.keywordStyle }, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = { fg = c.purple, style = config.functionStyle }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
-    TSNamespace         = { fg = c.red };    -- For identifiers referring to modules and namespaces.
+    TSNamespace = { fg = c.red }, -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
     TSOperator = { fg = c.fg }, -- For any operator: `+`, but also `->` and `*` in C.
@@ -239,7 +238,7 @@ function M.setup(config)
     TSVariable = { style = config.variableStyle }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag               = { fg = c.red };    -- Tags like html tag names.
+    TSTag = { fg = c.red }, -- Tags like html tag names.
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
     TSTextReference = { fg = c.red }, -- FIXME
@@ -304,7 +303,7 @@ function M.setup(config)
     NvimTreeIndentMarker = { fg = c.fg_gutter },
     NvimTreeImageFile = { fg = c.fg_sidebar },
     NvimTreeSymlink = { fg = c.purple },
-    NvimTreeFolderName= { fg = c.blue },
+    NvimTreeFolderName = { fg = c.blue },
     LspDiagnosticsError = { fg = c.error },
     LspDiagnosticsWarning = { fg = c.warning },
     LspDiagnosticsInformation = { fg = c.info },
@@ -342,7 +341,7 @@ function M.setup(config)
 
     -- ALE
     ALEWarningSign = { fg = c.yellow },
-    ALEErrorSign   = { fg = c.red },
+    ALEErrorSign = { fg = c.red },
 
     -- Hop
     HopNextKey = { fg = c.purple, style = "bold" },
@@ -356,12 +355,19 @@ function M.setup(config)
   if config.hideInactiveStatusline then
     local inactive = { style = "underline", bg = c.bg, fg = c.bg, sp = c.border }
 
-    -- StatusLineNC
+    -- StatusLine
     theme.base.StatusLineNC = inactive
 
-    -- LuaLine
-    for _, section in ipairs({ "a", "b", "c" }) do
-      theme.plugins["lualine_" .. section .. "_inactive"] = inactive
+    if vim.o.statusline ~= nil and string.find(vim.o.statusline, "lualine") then
+      -- Fix VertSplit & StatusLine crossover when lualine is active
+      -- https://github.com/ful1e5/onedark.nvim/issues/2
+      -- https://github.com/hoob3rt/lualine.nvim/issues/274
+      theme.base.StatusLine = { bg = c.bg }
+
+      -- LuaLine
+      for _, section in pairs({ "a", "b", "c" }) do
+        theme.plugins["lualine_" .. section .. "_inactive"] = inactive
+      end
     end
   end
 
