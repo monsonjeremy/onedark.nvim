@@ -31,7 +31,7 @@ local g = {
   dev = "onedark_dev",
   hideNonText = "onedark_hide_nontext",
   darkFloat = "onedark_dark_float",
-  darkSidebar = "onedark_dark_sidebar"
+  darkSidebar = "onedark_dark_sidebar",
 }
 
 config = {
@@ -47,7 +47,7 @@ config = {
   hideNonText = opt(g.hideNonText, true),
   darkFloat = opt(g.darkFloat, true),
   darkSidebar = opt(g.darkSidebar, true),
-  transform_colors = false
+  transform_colors = false,
 }
 
 ---@param userConfig Config

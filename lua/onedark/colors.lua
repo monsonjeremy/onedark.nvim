@@ -38,8 +38,8 @@ function M.setup(config)
       error = "#db4b4b",
       hint = "#1abc9c",
       info = "#0db9d7",
-      warn = "#e0af68"
-    }
+      warn = "#e0af68",
+    },
   }
 
   util.bg = colors.bg
@@ -48,13 +48,13 @@ function M.setup(config)
     add = util.darken(colors.git.add, 0.15),
     delete = util.darken(colors.git.delete, 0.15),
     change = util.darken(colors.git.change, 0.15),
-    text = colors.fg_gutter
+    text = colors.fg_gutter,
   }
 
   colors.gitSigns = {
     add = util.brighten(colors.gitSigns.add, 0.2),
     change = util.brighten(colors.gitSigns.change, 0.2),
-    delete = util.brighten(colors.gitSigns.delete, 0.2)
+    delete = util.brighten(colors.gitSigns.delete, 0.2),
   }
 
   colors.git.ignore = colors.fg_gutter
