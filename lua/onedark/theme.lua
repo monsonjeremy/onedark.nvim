@@ -164,7 +164,7 @@ function M.setup(config)
     LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
     LspDiagnosticsUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
 
-    LspSignatureActiveParameter = { fg = c.orange }
+    LspSignatureActiveParameter = { fg = c.orange },
 
     -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
     -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
@@ -343,7 +343,7 @@ function M.setup(config)
     HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
     HopUnmatched = { fg = c.dark5 },
 
-    LightspeedGreyWash = { fg = c.dark5 }
+    LightspeedGreyWash = { fg = c.dark5 },
   }
 
   if config.hideInactiveStatusline then

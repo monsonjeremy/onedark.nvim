@@ -7,7 +7,7 @@ local function setup(userConfig)
   if configModule.vimConfig then
     vim.schedule(function()
       vim.api.nvim_err_writeln(
-          [[monsonjeremy/onedark: onedark will stop supporting vimscript soon, change your config to lua or wrap it around lua << EOF ... EOF]]) -- luacheck: ignore
+        [[monsonjeremy/onedark: onedark will stop supporting vimscript soon, change your config to lua or wrap it around lua << EOF ... EOF]]) -- luacheck: ignore
     end)
   end
 
