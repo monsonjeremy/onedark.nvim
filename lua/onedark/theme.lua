@@ -353,7 +353,7 @@ function M.setup(config)
   }
 
   if config.hideInactiveStatusline then
-    local inactive = { style = "underline", bg = c.bg, fg = c.bg, sp = c.bg_visual }
+    local inactive = { style = "underline", bg = c.bg, fg = c.bg, sp = c.border }
 
     -- StatusLine
     theme.base.StatusLineNC = inactive

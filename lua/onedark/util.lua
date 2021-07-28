@@ -192,20 +192,21 @@ end
 
 ---@param theme Theme
 function util.load(theme)
-  -- only needed to clear when not the default colorscheme
-  if vim.g.colors_name then vim.cmd("hi clear") end
-  -- if vim.fn.exists("syntax_on") then
-  -- vim.cmd("syntax reset")
-  -- end
+  vim.cmd("hi clear")
+  if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
 
   vim.o.termguicolors = true
   vim.g.colors_name = "onedark"
   -- vim.api.nvim__set_hl_ns(ns)
   -- load base theme
   util.syntax(theme.base)
-  util.syntax(theme.plugins)
-  util.terminal(theme.colors)
-  util.autocmds(theme.config)
+
+  -- load syntax for plugins and terminal async
+  vim.defer_fn(function()
+    util.terminal(theme.colors)
+    util.syntax(theme.plugins)
+    util.autocmds(theme.config)
+  end, 0)
 end
 
 ---@param colors ColorScheme
