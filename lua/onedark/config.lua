@@ -4,7 +4,7 @@ local config
 local vimConfig = false
 
 -- shim vim for kitty and other generators
-vim = vim or {g = {}, o = {}}
+vim = vim or { g = {}, o = {} }
 
 local function opt(key, default)
   if vim.g[key] == nil then
@@ -63,5 +63,5 @@ local function applyConfiguration(userConfig)
   end
 end
 
-return {config = config, vimConfig = vimConfig, applyConfiguration = applyConfiguration}
+return { config = config, vimConfig = vimConfig, applyConfiguration = applyConfiguration }
 

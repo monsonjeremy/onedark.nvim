@@ -17,7 +17,7 @@ local function hexToRgb(hex_str)
          "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
 
   local r, g, b = string.match(hex_str, pat)
-  return {tonumber(r, 16), tonumber(g, 16), tonumber(b, 16)}
+  return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
 end
 
 ---@param fg string foreground color
@@ -35,8 +35,12 @@ function util.blend(fg, bg, alpha)
   return string.format("#%02X%02X%02X", blendChannel(1), blendChannel(2), blendChannel(3))
 end
 
-function util.darken(hex, amount, bg) return util.blend(hex, bg or util.bg, math.abs(amount)) end
-function util.lighten(hex, amount, fg) return util.blend(hex, fg or util.fg, math.abs(amount)) end
+function util.darken(hex, amount, bg)
+  return util.blend(hex, bg or util.bg, math.abs(amount))
+end
+function util.lighten(hex, amount, fg)
+  return util.blend(hex, fg or util.fg, math.abs(amount))
+end
 
 function util.brighten(color, percentage)
   local hsl = hsluv.hex_to_hsluv(color)
@@ -104,7 +108,9 @@ function util.debug(colors)
     if type(color) == "table" then
       util.debug(color)
     else
-      if util.colorsUsed[color] == nil then print("not used: " .. name .. " : " .. color) end
+      if util.colorsUsed[color] == nil then
+        print("not used: " .. name .. " : " .. color)
+      end
     end
   end
 end
@@ -144,7 +150,9 @@ end
 ---@param str string template string
 ---@param table table key value pairs to replace in the string
 function util.template(str, table)
-  return (str:gsub("($%b{})", function(w) return table[w:sub(3, -2)] or w end))
+  return (str:gsub("($%b{})", function(w)
+    return table[w:sub(3, -2)] or w
+  end))
 end
 
 function util.syntax(syntax)
@@ -243,7 +251,7 @@ end
 function util.light(brightness)
   for hl_name, hl in pairs(vim.api.nvim__get_hl_defs(0)) do
     local def = {}
-    for key, def_key in pairs({foreground = "fg", background = "bg", special = "sp"}) do
+    for key, def_key in pairs({ foreground = "fg", background = "bg", special = "sp" }) do
       if type(hl[key]) == "number" then
         local hex = string.format("#%06x", hl[key])
         local color = util.invertColor(hex)
@@ -252,7 +260,7 @@ function util.light(brightness)
       end
     end
     if hl_name ~= "" and #def > 0 then
-      for _, style in pairs({"bold", "italic", "underline", "undercurl", "reverse"}) do
+      for _, style in pairs({ "bold", "italic", "underline", "undercurl", "reverse" }) do
         if hl[style] then table.insert(def, "gui=" .. style) end
       end
 
@@ -265,7 +273,7 @@ function util.random()
   local colors = {}
   for hl_name, hl in pairs(vim.api.nvim__get_hl_defs(0)) do
     local def = {}
-    for key, def_key in pairs({foreground = "fg", background = "bg", special = "sp"}) do
+    for key, def_key in pairs({ foreground = "fg", background = "bg", special = "sp" }) do
       if type(hl[key]) == "number" then
         local hex = string.format("#%06x", hl[key])
         local color = colors[hex] and colors[hex] or util.randomColor(hex)
@@ -274,7 +282,7 @@ function util.random()
       end
     end
     if hl_name ~= "" and #def > 0 then
-      for _, style in pairs({"bold", "italic", "underline", "undercurl", "reverse"}) do
+      for _, style in pairs({ "bold", "italic", "underline", "undercurl", "reverse" }) do
         if hl[style] then table.insert(def, "gui=" .. style) end
       end
 

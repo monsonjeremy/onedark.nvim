@@ -32,8 +32,8 @@ function M.setup(config)
     green = "#98c379",
     red = "#e86671",
     red1 = "#f65866",
-    git = {change = "#e0af68", add = "#109868", delete = "#9A353D", conflict = "#bb7a61"},
-    gitSigns = {change = "#e0af68", add = "#109868", delete = "#9A353D"},
+    git = { change = "#e0af68", add = "#109868", delete = "#9A353D", conflict = "#bb7a61" },
+    gitSigns = { change = "#e0af68", add = "#109868", delete = "#9A353D" },
     diagnostics = {
       error = "#db4b4b",
       hint = "#1abc9c",

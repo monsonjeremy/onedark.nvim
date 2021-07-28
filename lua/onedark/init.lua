@@ -18,4 +18,4 @@ local function setup(userConfig)
   util.load(theme.setup(configModule.config))
 end
 
-return {setup = setup}
+return { setup = setup }
