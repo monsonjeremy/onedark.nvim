@@ -32,6 +32,7 @@ A dark Neovim theme written in Lua. Includes extra themes for Kitty and Alacritt
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Lightline](https://github.com/itchyny/lightline.vim)
 - [Neogit](https://github.com/TimUntersberger/neogit)
+- [Barbar](https://github.com/romgrk/barbar.nvim)
 
 ## ⚡️ Requirements
 
