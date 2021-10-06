@@ -1,6 +1,6 @@
-local util = require("onedark.util")
-local colors = require("onedark.colors")
-local configModule = require("onedark.config")
+local util = require('onedark.util')
+local colors = require('onedark.colors')
+local configModule = require('onedark.config')
 
 local M = {}
 
@@ -41,8 +41,8 @@ function M.setup(config)
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.dark5 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen = { fg = c.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg = { fg = c.fg_dark, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MatchParen = { fg = c.orange, style = 'bold' }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    ModeMsg = { fg = c.fg_dark, style = 'bold' }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
     -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = c.blue }, -- |more-prompt|
@@ -57,20 +57,20 @@ function M.setup(config)
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
-    QuickFixLine = { bg = c.bg_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    QuickFixLine = { bg = c.bg_visual, style = 'bold' }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search = { bg = c.bg_search, fg = c.fg_search }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     SpecialKey = { fg = c.fg_gutter }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad = { sp = c.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap = { sp = c.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal = { sp = c.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    SpellRare = { sp = c.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+    SpellBad = { sp = c.error, style = 'undercurl' }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap = { sp = c.warning, style = 'undercurl' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal = { sp = c.info, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellRare = { sp = c.hint, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
     StatusLineNC = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
     TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
     TabLineSel = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
-    Title = { fg = c.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
+    Title = { fg = c.blue, style = 'bold' }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.warning }, -- warning messages
@@ -117,9 +117,9 @@ function M.setup(config)
     -- SpecialComment= { }, -- special things inside a comment
     -- Debug         = { }, --    debugging statements
 
-    Underlined = { style = "underline" }, -- (preferred) text that stands out, HTML links
-    Bold = { style = "bold" },
-    Italic = { style = "italic" },
+    Underlined = { style = 'underline' }, -- (preferred) text that stands out, HTML links
+    Bold = { style = 'bold' },
+    Italic = { style = 'italic' },
     -- ("Ignore", below, may be invisible...)
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
@@ -127,20 +127,20 @@ function M.setup(config)
     Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     qfLineNr = { fg = c.dark5 },
     qfFileName = { fg = c.blue },
-    htmlTag = { fg = c.purple, style = "bold" },
+    htmlTag = { fg = c.purple, style = 'bold' },
     -- mkdHeading = { fg = c.orange, style = "bold" },
     -- mkdCode = { bg = c.bg2, fg = c.fg },
     mkdCodeDelimiter = { bg = c.bg2, fg = c.fg },
-    mkdCodeStart = { fg = c.yellow, style = "bold" },
-    mkdCodeEnd = { fg = c.yellow, style = "bold" },
+    mkdCodeStart = { fg = c.yellow, style = 'bold' },
+    mkdCodeEnd = { fg = c.yellow, style = 'bold' },
     -- mkdLink = { fg = c.blue, style = "underline" },
 
-    markdownHeadingDelimiter = { fg = c.orange, style = "bold" },
+    markdownHeadingDelimiter = { fg = c.orange, style = 'bold' },
     markdownCode = { fg = c.yellow },
     markdownCodeBlock = { fg = c.yellow },
-    markdownH1 = { fg = c.red, style = "bold" },
-    markdownH2 = { fg = c.blue, style = "bold" },
-    markdownLinkText = { fg = c.blue, style = "underline" },
+    markdownH1 = { fg = c.red, style = 'bold' },
+    markdownH2 = { fg = c.blue, style = 'bold' },
+    markdownLinkText = { fg = c.blue, style = 'underline' },
     debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
     -- These groups are for the native LSP client. Some other LSP clients may
@@ -149,6 +149,7 @@ function M.setup(config)
     LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
     LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
+
     LspDiagnosticsDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -159,10 +160,24 @@ function M.setup(config)
     LspDiagnosticsVirtualTextInformation = { bg = c.none, fg = c.diagnostics.info }, -- Used for "Information" diagnostic virtual text
     LspDiagnosticsVirtualTextHint = { bg = c.none, fg = c.diagnostics.hint }, -- Used for "Hint" diagnostic virtual text
 
-    LspDiagnosticsUnderlineError = { style = "undercurl", sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineError = { style = 'undercurl', sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning = { style = 'undercurl', sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation = { style = 'undercurl', sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
     LspDiagnosticsUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
+
+    -- neovim 0.6.0
+    DiagnosticDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultWarn = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultInfo = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticVirtualTextError = { bg = c.none, fg = c.diagnostics.error }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { bg = c.none, fg = c.diagnostics.warning }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { bg = c.none, fg = c.diagnostics.info }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { bg = c.none, fg = c.diagnostics.hint }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticUnderlineError = { style = 'undercurl', sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = { style = 'undercurl', sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo = { style = 'undercurl', sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
 
     LspSignatureActiveParameter = { fg = c.orange },
 
@@ -289,16 +304,16 @@ function M.setup(config)
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_light, bg = c.bg_sidebar },
     NvimTreeEndOfBuffer = config.darkSidebar and { fg = c.bg2 } or { fg = c.bg },
-    NvimTreeRootFolder = { fg = c.fg_light, style = "bold" },
+    NvimTreeRootFolder = { fg = c.fg_light, style = 'bold' },
     NvimTreeGitDirty = { fg = c.yellow2 },
     NvimTreeGitNew = { fg = c.git.add },
     NvimTreeGitDeleted = { fg = c.git.delete },
-    NvimTreeSpecialFile = { fg = c.yellow, style = "underline" },
+    NvimTreeSpecialFile = { fg = c.yellow, style = 'underline' },
     NvimTreeIndentMarker = { fg = c.fg_gutter },
     NvimTreeImageFile = { fg = c.fg_sidebar },
     NvimTreeSymlink = { fg = c.purple },
     NvimTreeFolderName = { fg = c.fg_light },
-    NvimTreeOpenedFolderName = { fg = c.fg_light, style = "bold" },
+    NvimTreeOpenedFolderName = { fg = c.fg_light, style = 'bold' },
     LspDiagnosticsError = { fg = c.error },
     LspDiagnosticsWarning = { fg = c.warning },
     LspDiagnosticsInformation = { fg = c.info },
@@ -308,7 +323,7 @@ function M.setup(config)
     DashboardShortCut = { fg = c.purple },
     DashboardHeader = { fg = c.red },
     DashboardCenter = { fg = c.blue },
-    DashboardFooter = { fg = c.yellow, style = "italic" },
+    DashboardFooter = { fg = c.yellow, style = 'italic' },
 
     -- WhichKey
     WhichKey = { fg = c.yellow },
@@ -358,8 +373,8 @@ function M.setup(config)
     ALEErrorSign = { fg = c.red },
 
     -- Hop
-    HopNextKey = { fg = c.purple, style = "bold" },
-    HopNextKey1 = { fg = c.blue, style = "bold" },
+    HopNextKey = { fg = c.purple, style = 'bold' },
+    HopNextKey1 = { fg = c.blue, style = 'bold' },
     HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
     HopUnmatched = { fg = c.dark5 },
 
@@ -369,20 +384,20 @@ function M.setup(config)
   theme.defer = {}
 
   if config.hideInactiveStatusline then
-    local inactive = { style = "underline", bg = c.bg, fg = c.bg, sp = c.bg_visual }
+    local inactive = { style = 'underline', bg = c.bg, fg = c.bg, sp = c.bg_visual }
 
     -- StatusLine
     theme.base.StatusLineNC = inactive
 
-    if vim.o.statusline ~= nil and string.find(vim.o.statusline, "lualine") then
+    if vim.o.statusline ~= nil and string.find(vim.o.statusline, 'lualine') then
       -- Fix VertSplit & StatusLine crossover when lualine is active
       -- https://github.com/ful1e5/onedark.nvim/issues/2
       -- https://github.com/hoob3rt/lualine.nvim/issues/274
       theme.base.StatusLine = { bg = c.bg }
 
       -- LuaLine
-      for _, section in pairs({ "a", "b", "c" }) do
-        theme.defer["lualine_" .. section .. "_inactive"] = inactive
+      for _, section in pairs({ 'a', 'b', 'c' }) do
+        theme.defer['lualine_' .. section .. '_inactive'] = inactive
       end
     end
   end
