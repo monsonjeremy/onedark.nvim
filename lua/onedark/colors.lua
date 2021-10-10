@@ -42,7 +42,9 @@ function M.setup(config)
     },
   }
 
+  -- useful for 'util.darken()' and 'util.lighten()'
   util.bg = colors.bg
+  util.fg = colors.fg
 
   colors.diff = {
     add = util.darken(colors.git.add, 0.15),
