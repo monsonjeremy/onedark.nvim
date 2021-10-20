@@ -202,7 +202,7 @@ function M.setup(config)
 
     -- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     -- TSAttribute         = { };    -- (unstable) TODO: docs
-    -- TSBoolean           = { };    -- For booleans.
+    TSBoolean = { fg = c.yellow }, -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For comment blocks.
     TSNote = { fg = c.bg, bg = c.info },
@@ -211,7 +211,7 @@ function M.setup(config)
     TSConstructor = { fg = c.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     TSConstant = { fg = c.yellow }, -- For constants
-    -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
+    TSConstBuiltin = { fg = c.orange }, -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
@@ -242,13 +242,14 @@ function M.setup(config)
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSVariable = { style = config.variableStyle }, -- Any variable name that does not have another highlight.
+    TSTag = { fg = c.yellow }, -- Tags like html tag names.
+    TSTagDelimiter = { fg = c.red }, -- Tag delimiter like `<` `>` `/`
+    TSTagAttribute = { fg = c.orange },
+    TSVariable = { style = config.variableStyle, fg = c.red }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag = { fg = c.red }, -- Tags like html tag names.
-    -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-    -- TSText              = { };    -- For strings considered text in a markup language.
     TSTextReference = { fg = c.red }, -- FIXME
+    -- TSText              = { };    -- For strings considered text in a markup language.
     -- TSEmphasis          = { };    -- For text to be represented with emphasis.
     -- TSUnderline         = { };    -- For text to be represented with an underline.
     -- TSStrike            = { };    -- For strikethrough text.
@@ -369,20 +370,20 @@ function M.setup(config)
     BufferCurrent = { bg = c.bg, fg = c.fg },
     BufferCurrentIndex = { bg = c.bg, fg = c.blue },
     BufferCurrentMod = { bg = c.bg, fg = c.yellow },
-    BufferCurrentSign = { link = "BufferCurrentIndex" },
-    BufferCurrentTarget = { bg = c.bg, fg = c.red, style = "bold" },
+    BufferCurrentSign = { link = 'BufferCurrentIndex' },
+    BufferCurrentTarget = { bg = c.bg, fg = c.red, style = 'bold' },
 
     BufferVisible = { bg = c.bg, fg = util.darken(c.fg, 0.8) },
-    BufferVisibleIndex = { link = "BufferCurrentIndex" },
-    BufferVisibleMod = { link = "BufferVisibleMod" },
+    BufferVisibleIndex = { link = 'BufferCurrentIndex' },
+    BufferVisibleMod = { link = 'BufferVisibleMod' },
     BufferVisibleSign = { bg = c.bg, fg = util.darken(c.blue, 0.8) },
-    BufferVisibleTarget = { link = "BufferCurrentTarget" },
+    BufferVisibleTarget = { link = 'BufferCurrentTarget' },
 
     BufferInactive = { bg = c.bg2, fg = util.darken(c.fg, 0.5) },
     BufferInactiveIndex = { bg = c.bg2, fg = util.darken(c.fg, 0.25) },
     BufferInactiveMod = { bg = c.bg2, fg = util.darken(c.yellow, 0.7) },
-    BufferInactiveSign = { link = "BufferInactiveIndex" },
-    BufferInactiveTarget = { bg = c.bg2, fg = c.red, style = "bold" },
+    BufferInactiveSign = { link = 'BufferInactiveIndex' },
+    BufferInactiveTarget = { bg = c.bg2, fg = c.red, style = 'bold' },
 
     -- ALE
     ALEWarningSign = { fg = c.yellow },
