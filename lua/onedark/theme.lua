@@ -208,7 +208,7 @@ function M.setup(config)
     TSNote = { fg = c.bg, bg = c.info },
     TSWarning = { fg = c.bg, bg = c.warning },
     TSDanger = { fg = c.bg, bg = c.error },
-    TSConstructor = { fg = c.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConstructor = { fg = c.yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     TSConstant = { fg = c.yellow }, -- For constants
     TSConstBuiltin = { fg = c.orange }, -- For constant that are built in the language: `nil` in Lua.
