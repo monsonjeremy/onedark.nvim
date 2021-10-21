@@ -244,7 +244,7 @@ function M.setup(config)
     -- TSTypeBuiltin       = { };    -- For builtin types.
     TSTag = { fg = c.red }, -- Tags like html tag names.
     TSTagDelimiter = { fg = c.red }, -- Tag delimiter like `<` `>` `/`
-    TSTagAttribute = { fg = c.orange },
+    TSTagAttribute = { fg = c.orange, style = config.keywordStyle },
     TSVariable = { style = config.variableStyle, fg = c.red }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
