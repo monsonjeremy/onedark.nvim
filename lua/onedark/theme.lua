@@ -242,7 +242,7 @@ function M.setup(config)
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSTag = { fg = c.yellow }, -- Tags like html tag names.
+    TSTag = { fg = c.red }, -- Tags like html tag names.
     TSTagDelimiter = { fg = c.red }, -- Tag delimiter like `<` `>` `/`
     TSTagAttribute = { fg = c.orange },
     TSVariable = { style = config.variableStyle, fg = c.red }, -- Any variable name that does not have another highlight.
