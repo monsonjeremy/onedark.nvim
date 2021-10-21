@@ -163,7 +163,7 @@ function M.setup(config)
     LspDiagnosticsUnderlineError = { style = 'undercurl', sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
     LspDiagnosticsUnderlineWarning = { style = 'undercurl', sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
     LspDiagnosticsUnderlineInformation = { style = 'undercurl', sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineHint = { style = 'undercurl', sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
 
     -- neovim 0.6.0
     DiagnosticDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -177,7 +177,7 @@ function M.setup(config)
     DiagnosticUnderlineError = { style = 'undercurl', sp = c.diagnostics.error }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { style = 'undercurl', sp = c.diagnostics.warning }, -- Used to underline "Warning" diagnostics
     DiagnosticUnderlineInfo = { style = 'undercurl', sp = c.diagnostics.info }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { style = c.none, sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineHint = { style = 'undercurl', sp = c.diagnostics.hint }, -- Used to underline "Hint" diagnostics
 
     LspSignatureActiveParameter = { fg = c.orange },
 
