@@ -202,7 +202,7 @@ function M.setup(config)
 
     -- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     -- TSAttribute         = { };    -- (unstable) TODO: docs
-    TSBoolean = { fg = c.yellow }, -- For booleans.
+    -- TSBoolean          = { }; -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For comment blocks.
     TSNote = { fg = c.bg, bg = c.info },
