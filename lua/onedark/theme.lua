@@ -86,7 +86,7 @@ function M.setup(config)
     String = { fg = c.green }, --   a string constant: "this is a string"
     Character = { fg = c.green }, --  a character constant: 'c', '\n'
     -- Number        = { }, --   a number constant: 234, 0xff
-    Boolean       = { fg = c.orange }, --  a boolean constant: TRUE, false
+    Boolean = { fg = c.orange }, --  a boolean constant: TRUE, false
     -- Float         = { }, --    a floating point constant: 2.3e10
 
     Identifier = { fg = c.red, style = config.variableStyle }, -- (preferred) any variable name
@@ -396,6 +396,14 @@ function M.setup(config)
     HopUnmatched = { fg = c.dark5 },
 
     LightspeedGreyWash = { fg = c.dark5 },
+
+    -- NVIM CMP - VSCode like highlights
+    CmpItemAbbrMatch = { fg = c.blue },
+    CmpItemAbbrMatchFuzzy = { fg = c.blue },
+    CmpItemKindFunction = { fg = c.purple },
+    CmpItemKindMethod = { fg = c.purple },
+    CmpItemKindVariable = { fg = c.blue },
+    CmpItemKindKeyword = { fg = c.dark5 },
   }
 
   theme.defer = {}
