@@ -403,7 +403,10 @@ function M.setup(config)
     CmpItemKindFunction = { fg = c.purple },
     CmpItemKindMethod = { fg = c.purple },
     CmpItemKindVariable = { fg = c.blue },
+    CmpItemKindInterface = { fg = c.blue },
+    CmpItemKindText = { fg = c.blue },
     CmpItemKindKeyword = { fg = c.dark5 },
+    CmpItemAbbrDeprecated = { style = 'strikethrough', fg = c.fg_gutter },
   }
 
   theme.defer = {}
