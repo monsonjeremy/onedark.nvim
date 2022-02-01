@@ -432,7 +432,7 @@ function M.setup(config)
     theme.plugins.TelescopeBorder = { fg = c.darker_black, bg = c.black }
     theme.plugins.TelescopePromptBorder = { fg = c.black, bg = c.black }
     theme.plugins.TelescopePromptCounter = { fg = c.fg_dark, bg = c.black }
-    theme.plugins.TelescopePromptNormal = { fg = c.fg, bg = c.black }
+    theme.plugins.TelescopePromptNormal = { fg = c.fg, bg = c.black2 }
     theme.plugins.TelescopePromptPrefix = { fg = c.red, bg = c.black }
     theme.plugins.TelescopeNormal = { bg = c.black }
     theme.plugins.TelescopePreviewBorder = { fg = c.border, bg = c.black }
