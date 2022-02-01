@@ -430,10 +430,10 @@ function M.setup(config)
   if config.customTelescope then
     -- Telescope
     theme.plugins.TelescopeBorder = { fg = c.darker_black, bg = c.black }
-    theme.plugins.TelescopePromptBorder = { fg = c.black, bg = c.black }
-    theme.plugins.TelescopePromptCounter = { fg = c.fg_dark, bg = c.black }
+    theme.plugins.TelescopePromptBorder = { fg = c.black2, bg = c.black2 }
+    theme.plugins.TelescopePromptCounter = { fg = c.fg_dark, bg = c.black2 }
     theme.plugins.TelescopePromptNormal = { fg = c.fg, bg = c.black2 }
-    theme.plugins.TelescopePromptPrefix = { fg = c.red, bg = c.black }
+    theme.plugins.TelescopePromptPrefix = { fg = c.red, bg = c.black2 }
     theme.plugins.TelescopeNormal = { bg = c.black }
     theme.plugins.TelescopePreviewBorder = { fg = c.border, bg = c.black }
     theme.plugins.TelescopePreviewTitle = { fg = c.black, bg = c.green }
