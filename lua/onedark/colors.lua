@@ -15,6 +15,9 @@ function M.setup(config)
     bg = '#282c34',
     bg2 = '#21252b',
     bg_visual = '#393f4a',
+    darker_black = '#1b1f27',
+    black = '#1e222a', --  nvim bg
+    black2 = '#252931',
     border = '#646e82',
     fg = '#abb2bf',
     fg_light = '#adbac7',

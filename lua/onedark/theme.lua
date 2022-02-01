@@ -299,9 +299,6 @@ function M.setup(config)
     GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
     GitSignsCurrentLineBlame = { fg = c.fg_gutter },
 
-    -- Telescope
-    TelescopeBorder = { fg = c.border_highlight },
-
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_light, bg = c.bg_sidebar },
     NvimTreeEndOfBuffer = config.darkSidebar and { fg = c.bg2 } or { fg = c.bg },
@@ -428,6 +425,22 @@ function M.setup(config)
         theme.defer['lualine_' .. section .. '_inactive'] = inactive
       end
     end
+  end
+
+  if config.customTelescope then
+    -- Telescope
+    theme.plugins.TelescopeBorder = { fg = c.darker_black, bg = c.black }
+    theme.plugins.TelescopePromptBorder = { fg = c.black, bg = c.black }
+    theme.plugins.TelescopePromptCounter = { fg = c.fg_dark, bg = c.black }
+    theme.plugins.TelescopePromptNormal = { fg = c.fg, bg = c.black }
+    theme.plugins.TelescopePromptPrefix = { fg = c.red, bg = c.black }
+    theme.plugins.TelescopeNormal = { bg = c.black }
+    theme.plugins.TelescopePreviewBorder = { fg = c.border, bg = c.black }
+    theme.plugins.TelescopePreviewTitle = { fg = c.black, bg = c.green }
+    theme.plugins.TelescopePromptTitle = { fg = c.black, bg = c.red }
+    theme.plugins.TelescopeResultsBorder = { fg = c.black, bg = c.black }
+    theme.plugins.TelescopeResultsTitle = { fg = c.black, bg = c.blue }
+    theme.plugins.TelescopeSelection = { bg = c.darker_black }
   end
 
   return theme

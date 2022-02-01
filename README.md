@@ -102,6 +102,7 @@ let g:lightline = {'colorscheme': 'onedark'}
 | darkSidebar            | `true`   | Sidebar like windows like `NvimTree` get a darker background                                                                                                    |
 | darkFloat              | `true`   | Float windows like the lsp diagnostics windows get a darker background.                                                                                         |
 | colors                 | `{}`     | You can override specific color groups to use other groups or a hex color                                                                                       |
+| customTelescope        | `false`  | Better telescope colors                                                                                                                                         |
 
 ```lua
 -- Example config in Lua
