@@ -404,6 +404,22 @@ function M.setup(config)
     CmpItemKindText = { fg = c.blue },
     CmpItemKindKeyword = { fg = c.dark5 },
     CmpItemAbbrDeprecated = { style = 'strikethrough', fg = c.fg_gutter },
+
+    NotifyERRORBorder = { fg = c.diagnostics.error },
+    NotifyWARNBorder = { fg = c.diagnostics.warn },
+    NotifyINFOBorder = { fg = c.diagnostics.info },
+    NotifyDEBUGBorder = { fg = c.diagnostics.hint },
+    NotifyTRACEBorder = { fg = c.purple },
+    NotifyERRORIcon = { fg = c.diagnostics.error },
+    NotifyWARNIcon = { fg = c.diagnostics.warn },
+    NotifyINFOIcon = { fg = c.diagnostics.info },
+    NotifyDEBUGIcon = { fg = c.diagnostics.hint },
+    NotifyTRACEIcon = { fg = c.purple },
+    NotifyERRORTitle = { fg = c.diagnostics.error },
+    NotifyWARNTitle = { fg = c.diagnostics.warn },
+    NotifyINFOTitle = { fg = c.diagnostics.info },
+    NotifyDEBUGTitle = { fg = c.diagnostics.hint },
+    NotifyTRACETitle = { fg = c.purple },
   }
 
   theme.defer = {}
