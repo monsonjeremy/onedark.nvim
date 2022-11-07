@@ -16,9 +16,11 @@ function M.setup(config)
     bg2 = '#21252b',
     bg_visual = '#393f4a',
     darker_black = '#1b1f27',
+    terminal_black = '#1b1f27',
     black = '#1e222a', --  nvim bg
     black2 = '#252931',
     border = '#646e82',
+    comment = '#5c6370',
     fg = '#abb2bf',
     fg_light = '#adbac7',
     fg_dark = '#798294',
@@ -55,12 +57,6 @@ function M.setup(config)
     text = colors.fg_gutter,
   }
 
-  colors.gitSigns = {
-    add = util.brighten(colors.gitSigns.add, 0.2),
-    change = util.brighten(colors.gitSigns.change, 0.2),
-    delete = util.brighten(colors.gitSigns.delete, 0.2),
-  }
-
   colors.git.ignore = colors.fg_gutter
   colors.black = util.darken(colors.bg, 0.8, '#000000')
   colors.bg_highlight = colors.black
@@ -83,8 +79,6 @@ function M.setup(config)
   colors.warning = colors.yellow
   colors.info = colors.blue
   colors.hint = colors.cyan
-
-  util.color_overrides(colors, config)
 
   return colors
 end
