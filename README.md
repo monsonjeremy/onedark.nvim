@@ -51,7 +51,9 @@ Plug 'monsonjeremy/onedark.nvim'
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'monsonjeremy/onedark.nvim'
+use({ 'monsonjeremy/onedark.nvim' })
+-- use this branch for new treesitter highlights 
+use({ 'monsonjeremy/onedark.nvim', branch = 'treesitter' })
 ```
 
 ## 🚀 Usage
